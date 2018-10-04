@@ -6,7 +6,8 @@ html
         link(rel='stylesheet', href='/stylesheets/style.css')
         block head
     body
-        block content
+        div(class="container")
+            block content
         script(src='/socket.io/socket.io.js')
         script(src='/popper/popper.js')
         script(src='/jquery/jquery.js')

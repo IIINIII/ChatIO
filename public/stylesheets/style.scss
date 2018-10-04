@@ -1,0 +1,37 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.messages {
+  @extend .bg-light;
+
+  .to-me {
+    @extend .text-left;
+
+    .message {
+      @extend .bg-primary;
+    }
+  }
+
+  .by-me {
+    @extend .text-right;
+  }
+
+  .message-wrapper {
+    @extend .my-2;
+  }
+
+  .message {
+    @extend .bg-white, .border, .rounded, .shadow-sm, .p-2;
+    display: inline-block;
+    max-width: 80%;
+    word-wrap: break-spaces;
+  }
+}
