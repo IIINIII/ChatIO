@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        block head
+    body
+        block content
+        script(src='/socket.io/socket.io.js')
+        script(src='/popper/popper.js')
+        script(src='/jquery/jquery.js')
+        script(src='/bootstrap/js/bootstrap.js')
+        block foot
