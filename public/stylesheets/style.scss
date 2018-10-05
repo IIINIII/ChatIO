@@ -17,11 +17,14 @@ a {
 
     .message {
       @extend .bg-primary;
+      color: $light;
     }
   }
 
   .by-me {
     @extend .text-right;
+    -ms-text-align-last: right;
+    text-align-last: right;
   }
 
   .message-wrapper {
@@ -29,9 +32,14 @@ a {
   }
 
   .message {
-    @extend .bg-white, .border, .rounded, .shadow-sm, .p-2;
+    @extend .bg-white, .border, .rounded, .shadow-sm, .p-2, .text-justify;
+    color: $dark;
     display: inline-block;
     max-width: 80%;
     word-wrap: break-spaces;
   }
+}
+
+.hidden {
+  display: none;
 }

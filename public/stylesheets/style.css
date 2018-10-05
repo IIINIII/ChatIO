@@ -6111,7 +6111,7 @@ button.bg-dark:focus {
 .text-monospace {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
-.text-justify {
+.text-justify, .messages .message {
   text-align: justify !important; }
 
 .text-nowrap {
@@ -6325,9 +6325,20 @@ body {
 a {
   color: #00B7FF; }
 
+.messages .to-me .message {
+  color: #f8f9fa; }
+
+.messages .by-me {
+  -ms-text-align-last: right;
+  text-align-last: right; }
+
 .messages .message {
+  color: #343a40;
   display: inline-block;
   max-width: 80%;
   word-wrap: break-spaces; }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

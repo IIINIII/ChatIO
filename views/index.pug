@@ -3,21 +3,35 @@ extends layout
 block content
     h1= title
     p Welcome to #{title}. A simple socket.io based chat.
-    div(class="card")
-        div(class="card-body messages", id="messages")
-            div(class="message-wrapper by-me")
-                div(class="message")
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla lectus lorem, et lobortis purus mattis non. Nullam ante risus, rhoncus ac massa sed, dignissim scelerisque felis. Morbi luctus enim diam, a placerat purus vehicula vitae. Donec vulputate arcu laoreet, pharetra odio ac, commodo dolor. Suspendisse eu rhoncus odio. Ut turpis dolor, ultrices dapibus turpis a, scelerisque ornare odio. Vivamus posuere egestas sapien. Sed ullamcorper vitae dui et lacinia. Maecenas at pulvinar nulla, id luctus odio. Donec consequat velit justo, eu tempor odio dapibus et. Pellentesque at aliquam est. Cras mattis nibh nulla, vel sollicitudin odio laoreet at. Nulla libero ante, ultricies sed orci eget, convallis varius tellus. Quisque sit amet auctor ex. Vivamus feugiat ultricies est non imperdiet. Suspendisse auctor massa imperdiet arcu accumsan, eget luctus nisl accumsan.
-            div(class="message-wrapper to-me")
-                div(class="message")
-                    | Merhaba
-            div(class="message-wrapper to-me")
-                div(class="message")
-                    | Teşekkürler
-    form(id="formSendMessage")
-        div(class="input-group mb-3 mt-3")
-            input(type="text", class="form-control bg-light", placeholder="Message", aria-label="Message", aria-describedby="submitMessage")
-            div(class="input-group-append")
-                button(class="btn btn-outline-primary", type="button", id="submitMessage") Send
+    br
+    form(id="formLogin")
+        div(class="offset-4 col-4")
+            div(class="card")
+                div(class="card-header")
+                    h3(class="text-center mt-2") Login
+                div(class="card-body")
+                    div(class="input-group mb-3 mt-3")
+                        input(type="text", id="username", class="form-control bg-light", autocomplete="off", placeholder="Username", aria-label="Username", required="required")
+                    div(class="input-group mb-3 mt-3")
+                        input(type="password", id="password", class="form-control bg-light", autocomplete="off", placeholder="Password", aria-label="Password", aria-describedby="submitLogin", required="required")
+                    div(class="input-group mb-3 mt-3")
+                        button(class="btn btn-block btn-outline-primary", type="submit", id="submitLogin") Login
+    div(id="chat", class="hidden")
+        div(class="card")
+            div(class="card-body messages", id="messages")
+                div(class="message-wrapper by-me")
+                    div(class="message")
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla lectus lorem, et lobortis purus mattis non. Nullam ante risus, rhoncus ac massa sed, dignissim scelerisque felis. Morbi luctus enim diam, a placerat purus vehicula vitae. Donec vulputate arcu laoreet, pharetra odio ac, commodo dolor. Suspendisse eu rhoncus odio. Ut turpis dolor, ultrices dapibus turpis a, scelerisque ornare odio. Vivamus posuere egestas sapien. Sed ullamcorper vitae dui et lacinia. Maecenas at pulvinar nulla, id luctus odio. Donec consequat velit justo, eu tempor odio dapibus et. Pellentesque at aliquam est. Cras mattis nibh nulla, vel sollicitudin odio laoreet at. Nulla libero ante, ultricies sed orci eget, convallis varius tellus. Quisque sit amet auctor ex. Vivamus feugiat ultricies est non imperdiet. Suspendisse auctor massa imperdiet arcu accumsan, eget luctus nisl accumsan.
+                div(class="message-wrapper to-me")
+                    div(class="message")
+                        | Merhaba
+                div(class="message-wrapper to-me")
+                    div(class="message")
+                        | Teşekkürler
+        form(id="formSendMessage")
+            div(class="input-group mb-3 mt-3")
+                input(type="text", id="msg", class="form-control bg-light", autocomplete="off", placeholder="Message", aria-label="Message", aria-describedby="submitMessage", required="required")
+                div(class="input-group-append")
+                    button(class="btn btn-outline-primary", type="submit", id="submitMessage") Send
 block foot
     script(src='/javascripts/scripts.js')
